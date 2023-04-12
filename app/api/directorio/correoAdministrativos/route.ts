@@ -3,12 +3,16 @@ import { SygescolPool } from "@/config/db";
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
   const correo = searchParams.get("correo");
+  // console.log("correo", correo);
 
   try {
     const [correoData] = await SygescolPool.query(
       ` SELECT id_correo_inst,correo_insti FROM correo_institucional WHERE correo_insti LIKE "%${correo}%"
         `
     );
+    console.log(` SELECT id_correo_inst,correo_insti FROM correo_institucional WHERE correo_insti LIKE "%${correo}%"
+    `);
+
     return NextResponse.json(
       {
         correoData,

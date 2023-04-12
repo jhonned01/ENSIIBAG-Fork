@@ -2,9 +2,9 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { FaWheelchair } from "react-icons/fa";
-import ItemMenu from "./ItemMenu";
-import InclusionItem from "./InclusionItem";
 import Link from "next/link";
+import InclusionItem from "../BotonInclusion/InclusionItem";
+import ItemMenu from "./ItemMenu";
 
 const Header = ({ setZoom, zoom, setContraste }: any) => {
   const [isOpen, setIsOpen] = useState(false);

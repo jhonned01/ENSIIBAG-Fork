@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import TitulosInternos from "../(Home)/TitulosInternos";
+import TitulosInternos from "../Inicio/TitulosInternos";
 import Image from "next/image";
 import GlosarioItem from "./GlosarioItem";
 import SVGglosarioClose from "./SVGglosarioClose";
