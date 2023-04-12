@@ -1,8 +1,8 @@
 "use client";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
-import AlertasItem from "./Alertas/AlertasItem";
-import SafaBody from "./Inicio/SafaBody";
+import AlertasItem from "../Alertas/AlertasItem";
+import SafaBody from "./SafaBody";
 
 const BodyComponent = () => {
   const [open, setOpen] = useState(true);

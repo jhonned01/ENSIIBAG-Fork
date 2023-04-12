@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
-
-import ContactanosItem from "./ContactanosItem";
 import InfoInteresItem from "./InfoInteresItem";
 import NuestrasSedesItem from "./NuestrasSedesItem";
+import ContactanosItem from "./ContactanosItem";
 import PoliticasInfoItem from "./PoliticasInfoItem";
 import SVGpolitica from "./SVGpolitica";
 
@@ -65,12 +64,6 @@ const Footer = () => {
               link="/DescargaAplicativos"
               title={"Descarga de Aplicativos"}
             />
-            {/* <InfoInteresItem
-                imgInfoInteres="/Footer/ENLACES.webp"
-                alt="enlacesInteres"
-                click={() => router.push("/EnlacesInteres")}
-                title={"Enlaces de Interés"}
-              /> */}
           </div>
         </div>
         {/* Nuestras Sedes */}

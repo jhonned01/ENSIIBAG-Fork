@@ -14,7 +14,6 @@ function InclusionItem({ setOpen, open, setZoom, zoom, setContraste }: any) {
   return (
     <>
       {open && (
-        // <div className=" bg-slate-800 bg-opacity-50 z-50 flex justify-center items-center absolute top-0 right-0 bottom-0 left-0">
         <div className="bg-slate-800 bg-opacity-50 fixed z-[60] w-full h-full inset-0">
           <div className="sticky top-[12%] flex justify-center">
             <div className="bg-white rounded-lg shadow w-full sm:max-w-2xl lg:h-auto max-h-[800px] sm:max-h-[500px] lg:max-h-[600px] overflow-auto">

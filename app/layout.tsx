@@ -1,4 +1,4 @@
-import MainBody from "./(Home)/MainBody";
+import MainBody from "./Inicio/MainBody";
 import "./globals.css";
 
 export const metadata = {

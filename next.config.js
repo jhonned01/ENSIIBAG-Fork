@@ -5,7 +5,12 @@ const nextConfig = {
   },
 
   images: {
-    domains: ["ensiibague.edu.co"],
+    domains: [
+      "www.ensiibague.edu.co",
+      "ensiibague.edu.co",
+      "ensiibague.edu.co/portal/",
+      `ensiibague.edu.co/sygescol${new Date().getFullYear()}`,
+    ],
   },
 };
 
