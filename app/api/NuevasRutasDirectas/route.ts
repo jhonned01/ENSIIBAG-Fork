@@ -2,11 +2,11 @@ import { NextResponse } from "next/server";
 import { WebMasterPool } from "@/config/db";
 export async function GET(req: Request) {
   try {
-    const [RutasDb] = await WebMasterPool.query(
+    const [RutasDb]: any = await WebMasterPool.query(
       "SELECT id,item,nombre FROM item ORDER BY item.id ASC"
     );
 
-    let NewRouterFormatted = RutasDb?.map((ruta) => {
+    let NewRouterFormatted = RutasDb?.map((ruta: any) => {
       return {
         ...ruta,
         link: `/Items/${ruta?.item}/${ruta?.nombre}`,
