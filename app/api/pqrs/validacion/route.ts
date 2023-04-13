@@ -2,8 +2,10 @@ import { NextResponse } from "next/server";
 import { WebMasterPool } from "@/config/db";
 export async function POST(req: Request) {
   const { DocumentoValidation } = await req.json();
+  console.log("DocumentoValidation", DocumentoValidation);
+
   try {
-    const [validation] = await WebMasterPool.query(
+    const [validation]: any = await WebMasterPool.query(
       `SELECT * from correo where documento=${DocumentoValidation} order by created_at DESC`
     );
 

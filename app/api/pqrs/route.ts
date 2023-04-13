@@ -71,7 +71,7 @@ export async function POST(req: Request) {
     console.log(fecha);
     console.log("====================================");
     const [rowsPQRS] = await WebMasterPool.query(
-      `INSERT INTO correo (nombre,documento, telefono, correo, asunto, mensaje, created_at) VALUES ('${Nombres}','${Documento}', '${Telefono}', '${Correo}', '${Asunto}', '${Mensaje}', '${fecha}')`
+      `INSERT INTO correo (nombre,documento, telefono, correo, asunto, mensaje, created_at, estado) VALUES ('${Nombres}','${Documento}', '${Telefono}', '${Correo}', '${Asunto}', '${Mensaje}', '${fecha}','espera')`
     );
 
     return NextResponse.json(

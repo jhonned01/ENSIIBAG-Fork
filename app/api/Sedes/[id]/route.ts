@@ -1,13 +1,17 @@
 import { NextResponse } from "next/server";
 import { WebMasterPool } from "@/config/db";
-export async function GET(request: Request) {
+export async function GET(req: Request, { params }: any) {
+  const { id } = params;
+  console.log("params=", params);
+
   try {
-    const [Horizonte]: any = await WebMasterPool.query(
-      "SELECT id, tipo, contenido, imagen FROM horizonte_inst"
+    const [InfoSedes]: any = await WebMasterPool.query(
+      `SELECT id,nombre,direccion,telefonos,correo,horarios,imagen,principal FROM sedes WHERE id = '${id}'`
     );
+
     return NextResponse.json(
       {
-        Horizonte,
+        InfoSedes: InfoSedes[0],
       },
       {
         status: 200,

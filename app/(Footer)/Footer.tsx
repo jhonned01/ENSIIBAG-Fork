@@ -78,7 +78,7 @@ const Footer = () => {
                   <NuestrasSedesItem
                     title={sede.nombre}
                     key={sede.id}
-                    link={`/Sedes/${sede.nombre}`}
+                    link={`/Sedes/${sede.id}`}
                     titleShow="Ver mas información"
                   />
                 ))
