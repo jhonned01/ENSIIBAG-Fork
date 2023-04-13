@@ -1,17 +1,13 @@
 import { NextResponse } from "next/server";
 import { WebMasterPool } from "@/config/db";
-export async function GET(req: Request, { params }: any) {
-  const { nombreSede } = params;
-  console.log("params=", params);
-
+export async function GET(request: Request) {
   try {
-    const [InfoSedes] = await WebMasterPool.query(
-      `SELECT id,nombre,direccion,telefonos,correo,horarios,imagen,principal FROM sedes WHERE nombre like '${nombreSede}'`
+    const [infoNino] = await WebMasterPool.query(
+      "SELECT * FROM infoninos WHERE estado = 1 ORDER BY id ASC"
     );
-
     return NextResponse.json(
       {
-        InfoSedes,
+        infoNino,
       },
       {
         status: 200,
