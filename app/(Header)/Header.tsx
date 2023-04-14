@@ -87,15 +87,8 @@ const Header = ({ setZoom, zoom, setContraste }: any) => {
 
             {/* Boton ley Transparencia */}
             <li className="mx-auto">
-              <a href={"/soporteYApoyo/LeyTransparencia"}>
-                <div
-                  className="w-48 h-16 flex flex-row gap-2 items-center justify-center cursor-pointer rounded-lg bg-[#005335] hover:bg-[#003823] p-3"
-                  onClick={(e) => {
-                    e.preventDefault();
-
-                    setIsOpen(false);
-                  }}
-                >
+              <Link href={"/LeyTransparencia"}>
+                <div className="w-48 h-16 flex flex-row gap-2 items-center justify-center cursor-pointer rounded-lg bg-[#005335] hover:bg-[#003823] p-3">
                   <p className="text-white pr-2 text-lg font-bold">
                     Ley de Transparencia
                   </p>
@@ -107,7 +100,7 @@ const Header = ({ setZoom, zoom, setContraste }: any) => {
                     className="object-contain"
                   />
                 </div>
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
