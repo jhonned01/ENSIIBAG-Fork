@@ -42,17 +42,16 @@ const Administrativo = () => {
           .includes(valueInput.toLowerCase()))
     );
   });
-  // console.log("filteredItems", filteredItems);
 
   const subHeaderComponentMemo = React.useMemo(() => {
     return (
       <input
         onChange={(e) => setValue(e.target.value)}
-        onKeyPress={(e) => {
+        onKeyDown={(e) => {
           if (e.key == "Enter") {
             // Prevenir
             e.preventDefault();
-            return false;
+            return;
           }
         }}
         value={valueInput.toUpperCase()}
@@ -84,38 +83,3 @@ const Administrativo = () => {
 };
 
 export default Administrativo;
-
-// export async function getServerSideProps() {
-//   try {
-//     const { data } = await axios.get(
-//       `${process.env.APP_URL}api/directorio/administrativos`
-//     );
-
-//     if (data[0]?.msn || data[1]?.error) {
-//       return {
-//         props: {
-//           data: data || [],
-//         },
-//       };
-//     }
-
-//     console.log("==================DATA BACK==================");
-//     console.log(data);
-//     console.log("====================================");
-//     return {
-//       props: {
-//         data: data,
-//       },
-//     };
-//   } catch (err) {
-//     return {
-//       props: {
-//         data: [
-//           {
-//             msn: "Fallo la conexión con el servidor si el error persiste contacte a soporte ",
-//           },
-//         ],
-//       },
-//     };
-//   }
-// }

@@ -17,10 +17,6 @@ const PqrsTable = ({
   const dateRadicado = new Date(fecha).toLocaleDateString();
   const dateRespuesta = new Date(updated_at).toLocaleDateString();
 
-  console.log("========respuesta============================");
-  console.log(respuesta);
-  console.log("====================================");
-
   return (
     <>
       {vacio ? (

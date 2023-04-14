@@ -37,9 +37,6 @@ const BusquedaAños = ({ response, id }: any) => {
   };
 
   const showPdf = () => {
-    console.log("====================================xd");
-    console.log(data);
-    console.log("====================================");
     if (data[0]?.msn || data[1]?.error) {
       return (
         <div>
@@ -87,9 +84,6 @@ const BusquedaAños = ({ response, id }: any) => {
     }
   };
 
-  console.log("====================================");
-  console.log(data);
-  console.log("====================================");
   if (error) {
     return <Error statusCode={error} />;
   } else {

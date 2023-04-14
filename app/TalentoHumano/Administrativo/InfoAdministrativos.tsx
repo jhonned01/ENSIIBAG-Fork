@@ -27,8 +27,6 @@ const InfoAdministrativos = ({ info, contratista }: any) => {
     usersCorreo();
   }, [info]);
 
-  console.log("correoInst======", correoInst);
-
   return (
     <>
       {Object.keys(info).length ? (

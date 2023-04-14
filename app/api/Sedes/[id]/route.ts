@@ -2,7 +2,6 @@ import { NextResponse } from "next/server";
 import { WebMasterPool } from "@/config/db";
 export async function GET(req: Request, { params }: any) {
   const { id } = params;
-  console.log("params=", params);
 
   try {
     const [InfoSedes]: any = await WebMasterPool.query(

@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import TitulosInternos from "../Inicio/TitulosInternos";
 import ConvocatoriaItemNew from "./ConvocatoriaItemNew";
 
-function index() {
+function Convocatorias() {
   const [Data, setData] = useState({} as any);
 
   const GetData = async () => {
@@ -12,10 +12,6 @@ function index() {
     );
     setData(convocatoria);
   };
-
-  //   console.log("Data", Data);
-  console.log("Object.keys", Object.keys(Data));
-  //   console.log("Object.keys", Object.values(Data));
 
   useEffect(() => {
     GetData();
@@ -89,37 +85,4 @@ function index() {
   );
 }
 
-export default index;
-
-// export async function getServerSideProps() {
-//   try {
-//     const convocatoria = await fetch(
-//       `${process.env.APP_URL}api/convocatoria`
-//     ).then((res) => res.json());
-
-//     if (convocatoria[0]?.msn || convocatoria[1]?.error) {
-//       return {
-//         props: {
-//           convocatoria: convocatoria || [],
-//         },
-//       };
-//     }
-//     return {
-//       props: {
-//         convocatoria: convocatoria,
-//       },
-//     };
-//   } catch (err) {
-//     console.log("=============================");
-//     console.log(err);
-//     return {
-//       props: {
-//         convocatoria: [
-//           {
-//             msn: "Fallo la conexión con el servidor si el error persiste contacte a soporte ",
-//           },
-//         ],
-//       },
-//     };
-//   }
-// }
+export default Convocatorias;

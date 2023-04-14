@@ -16,8 +16,6 @@ function Index() {
     GetData();
   }, []);
 
-  //   console.log("enlacesInt", Data);
-
   const showEnlaces = () => (
     <>
       {Data?.enlacesInt?.length > 0 ? (
@@ -61,36 +59,3 @@ function Index() {
 }
 
 export default Index;
-
-// export async function getServerSideProps() {
-//   try {
-//     const enlacesInt = await fetch(`${process.env.APP_URL}api/enlacesInt`).then(
-//       (res) => res.json()
-//     );
-
-//     if (enlacesInt[0]?.msn || enlacesInt[1]?.error) {
-//       return {
-//         props: {
-//           enlacesInt: enlacesInt || [],
-//         },
-//       };
-//     }
-//     return {
-//       props: {
-//         enlacesInt: enlacesInt,
-//       },
-//     };
-//   } catch (err) {
-//     console.log("=============================");
-//     console.log(err);
-//     return {
-//       props: {
-//         enlacesInt: [
-//           {
-//             msn: "Fallo la conexión con el servidor si el error persiste contacte a soporte ",
-//           },
-//         ],
-//       },
-//     };
-//   }
-// }
