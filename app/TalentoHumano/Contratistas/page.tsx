@@ -1,21 +1,23 @@
 "use client";
 import TitulosInternos from "@/app/Inicio/TitulosInternos";
 import React, { useEffect, useState } from "react";
-import LayoudAdmnistrativos from "./LayoudAdmnistrativos";
+import LayoudContratistas from "./LayoudContratistas";
 
-const Administrativo = () => {
+const Contratistas = ({ data }: any) => {
   const [Data, setData] = useState({} as any);
 
   const GetData = async () => {
-    const administrativos = await fetch("/api/directorio/administrativos").then(
+    const contratistas = await fetch("/api/directorio/contratistas").then(
       (res) => res.json()
     );
-    setData(administrativos);
+    setData(contratistas);
   };
 
   useEffect(() => {
     GetData();
   }, []);
+
+  console.log("Data", Data);
 
   const [valueInput, setValue] = useState("");
 
@@ -42,33 +44,41 @@ const Administrativo = () => {
           .includes(valueInput.toLowerCase()))
     );
   });
+  console.log("=====filteredItems===============================");
+  console.log(filteredItems);
+  console.log("====================================");
 
   const subHeaderComponentMemo = React.useMemo(() => {
     return (
-      <input
-        onChange={(e) => setValue(e.target.value)}
-        onKeyDown={(e) => {
-          if (e.key == "Enter") {
-            // Prevenir
+      <>
+        <input
+          onChange={(e) => {
             e.preventDefault();
-            return;
-          }
-        }}
-        value={valueInput.toUpperCase()}
-        placeholder="Buscar..."
-        className="block w-full px-4 py-2 mt-2 text-gray-800 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-[#bc5434] dark:focus:border-blue-500 focus:outline-none focus:ring"
-      />
+            setValue(e.target.value);
+          }}
+          onKeyPress={(e) => {
+            if (e.key == "Enter") {
+              // Prevenir
+              e.preventDefault();
+              return false;
+            }
+          }}
+          value={valueInput.toUpperCase()}
+          placeholder="Buscar..."
+          className="block w-full px-4 py-2 mt-2 text-gray-800 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-[#bc5434] dark:focus:border-blue-500 focus:outline-none focus:ring"
+        />
+      </>
     );
   }, [valueInput]);
   return (
     <div>
-      <TitulosInternos title="Administrativos" />
+      <TitulosInternos title="Contratistas" />
       {/* navegations */}
       <div>
-        <form>
+        <form action="#">
           <div className="pl-[2%] grid grid-cols-1 gap-6 my-4 sm:grid-cols-4">
             <label className=" text-lg capitalize font-bold flex justify-center items-center text-gray-800">
-              Ingrese el nombre del Administrativo:
+              Ingrese el nombre del Contratista:
             </label>
             <div className=" flex justify-center items-center">
               {subHeaderComponentMemo}
@@ -77,9 +87,9 @@ const Administrativo = () => {
         </form>
       </div>
       {/* table */}
-      <LayoudAdmnistrativos users={filteredItems} />
+      <LayoudContratistas users={filteredItems} />
     </div>
   );
 };
 
-export default Administrativo;
+export default Contratistas;

@@ -3,7 +3,7 @@ import { SygescolPool } from "@/config/db";
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
   const correo = searchParams.get("correo");
-  const id = searchParams.get("correo");
+  const id = searchParams.get("id");
 
   try {
     const [correoData]: any = await SygescolPool.query(

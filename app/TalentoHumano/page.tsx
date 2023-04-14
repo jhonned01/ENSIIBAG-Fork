@@ -23,12 +23,14 @@ const TalentoHumano = () => {
         <ItemSubMenu
           title="DOCENTES"
           img="/Directorio/docentesDIRECT.webp"
+          click="/TalentoHumano/Docentes"
           // click={() => router.push("/TalentoHumano/Docentes")}
         />
         <ItemSubMenu
           className="lg:col-span-3"
           title="CONTRATISTAS"
           img="/Directorio/contratistasDIRECT.webp"
+          click="/TalentoHumano/Contratistas"
           // click={() => router.push("/TalentoHumano/Contratistas")}
         />
       </section>
