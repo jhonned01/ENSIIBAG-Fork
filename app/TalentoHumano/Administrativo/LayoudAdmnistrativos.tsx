@@ -1,4 +1,3 @@
-"use client";
 import React, { useEffect } from "react";
 import InfoAdministrativos from "./InfoAdministrativos";
 
@@ -9,6 +8,10 @@ const LayoudAdmnistrativos = ({ users }: any) => {
   console.log("====================================");
 
   useEffect(() => {}, []);
+
+  console.log("===INFO DOCENTES=================================");
+  console.log(info);
+  console.log("====================================");
   return (
     <div className="grid sm:grid-cols-10 h-full ">
       <div className="h-full sm:col-span-3 overflow-auto">

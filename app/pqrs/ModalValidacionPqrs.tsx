@@ -9,8 +9,8 @@ const ModalValidacionPqrs = ({ open, onCloseModal, data }: any) => {
   const [res, setRes] = useState();
 
   const showDataInfo = () => {
-    if (data.length > 0) {
-      return data.map((item: any, index: any) => (
+    if (data?.validation?.length > 0) {
+      return data?.validation?.map((item: any, index: any) => (
         <PqrsTable
           key={index}
           id={item.id}

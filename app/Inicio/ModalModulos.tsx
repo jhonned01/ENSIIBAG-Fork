@@ -31,13 +31,13 @@ const ModalModulos = ({ title, moduloIteam, setModal, modal, links }: any) => {
               <li className=" grid gap-3 grid-cols-1 md:grid-cols-2">
                 {moduloIteam?.map((iteam: any, key: any) => (
                   <Link
-                    href={""}
+                    href={`${iteam.link}${iteam.idSubmenu}`}
                     key={key}
                     className="cursor-pointer select-none h-20 flex flex-1 items-center p-4 transition duration-500 ease-in-out transform hover:-translate-y-2 rounded-2xl border-2 hover:shadow-2xl border-[#006F46]"
                   >
                     <div className="flex-1 pl-1 mr-16">
                       <div className="text-sm lg:text-lg sm:font-medium">
-                        {iteam.submenu}
+                        {iteam.nombreSubmenu}
                       </div>
                     </div>
                     <div className="w-10 text-wrap text-center flex text-white text-bold flex-col rounded-full bg-[#006F46] justify-center items-center mr-10 p-2">
