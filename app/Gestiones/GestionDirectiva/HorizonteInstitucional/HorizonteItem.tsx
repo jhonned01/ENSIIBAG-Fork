@@ -3,8 +3,7 @@ function HorizonteItem({ horizonte, imagesHorizonte }: any) {
   const attachClassesToLinks = (htmlWithLinks: any) => {
     return htmlWithLinks;
   };
-  console.log("imagesHorizonte===========");
-  console.log(imagesHorizonte);
+
   return (
     <div>
       {horizonte?.error ? (

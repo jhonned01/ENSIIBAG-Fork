@@ -18,8 +18,6 @@ function OfertasEmpleo() {
     GetData();
   }, []);
 
-  //   console.log("Data", Data);
-
   const showOfertasEmpleo = () => (
     <div className="container mx-auto p-4 gap-4 grid md:grid-cols-2 lg:grid-cols-3">
       {Data?.ofertasEmpleo?.length > 0 ? (
@@ -64,36 +62,3 @@ function OfertasEmpleo() {
 }
 
 export default OfertasEmpleo;
-
-// export async function getServerSideProps() {
-//   try {
-//     const ofertasEmpleo = await fetch(
-//       `${process.env.APP_URL}api/ofertasEmpleo`
-//     ).then((res) => res.json());
-
-//     if (ofertasEmpleo[0]?.msn || ofertasEmpleo[1]?.error) {
-//       return {
-//         props: {
-//           ofertasEmpleo: ofertasEmpleo || [],
-//         },
-//       };
-//     }
-//     return {
-//       props: {
-//         ofertasEmpleo: ofertasEmpleo,
-//       },
-//     };
-//   } catch (err) {
-//     console.log("=============================");
-//     console.log(err);
-//     return {
-//       props: {
-//         ofertasEmpleo: [
-//           {
-//             msn: "Fallo la conexión con el servidor si el error persiste contacte a soporte ",
-//           },
-//         ],
-//       },
-//     };
-//   }
-// }

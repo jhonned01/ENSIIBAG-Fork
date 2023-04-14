@@ -67,9 +67,7 @@ export async function POST(req: Request) {
     const minute = date.getMinutes();
     const second = date.getSeconds();
     const fecha = `${year}-${month}-${day} ${hour}:${minute}:${second}`;
-    console.log("====fecha================================");
-    console.log(fecha);
-    console.log("====================================");
+
     const [rowsPQRS] = await WebMasterPool.query(
       `INSERT INTO correo (nombre,documento, telefono, correo, asunto, mensaje, created_at, estado) VALUES ('${Nombres}','${Documento}', '${Telefono}', '${Correo}', '${Asunto}', '${Mensaje}', '${fecha}','espera')`
     );

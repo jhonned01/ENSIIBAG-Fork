@@ -14,8 +14,7 @@ function InfoNinosItem({
   subtitle4,
 }: any) {
   let NewFecha2 = fecha?.substring(0, 10);
-  console.log("===========================Newfecha==");
-  console.log(NewFecha2);
+
   return (
     <>
       <div className="text-center mx-2 my-auto">

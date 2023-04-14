@@ -38,20 +38,3 @@ function SedePrincipal({ params: { sedesId } }: any) {
 }
 
 export default SedePrincipal;
-
-// export async function getServerSideProps(context) {
-//   let { sede: sedes } = context.query;
-//   console.log("--------------xd");
-//   console.log(context.query.sedes);
-
-//   const res = await fetch(
-//     `${process.env.APP_URL}api/Sedes/${context.query.sedes}`
-//   );
-//   const sede = await res.json();
-
-//   return {
-//     props: {
-//       sede: sede,
-//     },
-//   };
-// }

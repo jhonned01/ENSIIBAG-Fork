@@ -7,7 +7,7 @@ import LayoudAdmnistrativos from "./LayoudAdmnistrativos";
 const Administrativo = ({ data }: any) => {
   const [valueInput, setValue] = useState("");
 
-  const filteredItems = data.filter((item: any) => {
+  const filteredItems = data?.filter((item: any) => {
     let nombre = `${item?.admco_nom1?.toLowerCase()} ${item?.admco_nom2?.toLowerCase()} ${item?.admco_ape1?.toLowerCase()} ${item?.admco_ape2?.toLowerCase()}`;
     let nombre2 = nombre.replace(/\s+/g, " ");
     let Ape1Nombre = `${item.admco_nom2} ${item.admco_ape1} ${item.admco_ape2} ${item.admco_nom1}`;
@@ -30,18 +30,16 @@ const Administrativo = ({ data }: any) => {
           .includes(valueInput.toLowerCase()))
     );
   });
-  // console.log("=====filteredItems===============================");
-  // console.log(data);
-  // console.log("====================================");
+
   const subHeaderComponentMemo = React.useMemo(() => {
     return (
       <input
         onChange={(e) => setValue(e.target.value)}
-        onKeyPress={(e) => {
+        onKeyDown={(e) => {
           if (e.key == "Enter") {
             // Prevenir
             e.preventDefault();
-            return false;
+            return;
           }
         }}
         value={valueInput.toUpperCase()}
@@ -74,38 +72,3 @@ const Administrativo = ({ data }: any) => {
 };
 
 export default Administrativo;
-
-// export async function getServerSideProps() {
-//   try {
-//     const { data } = await axios.get(
-//       `${process.env.APP_URL}api/directorio/administrativos`
-//     );
-
-//     if (data[0]?.msn || data[1]?.error) {
-//       return {
-//         props: {
-//           data: data || [],
-//         },
-//       };
-//     }
-
-//     console.log("==================DATA BACK==================");
-//     console.log(data);
-//     console.log("====================================");
-//     return {
-//       props: {
-//         data: data,
-//       },
-//     };
-//   } catch (err) {
-//     return {
-//       props: {
-//         data: [
-//           {
-//             msn: "Fallo la conexión con el servidor si el error persiste contacte a soporte ",
-//           },
-//         ],
-//       },
-//     };
-//   }
-// }

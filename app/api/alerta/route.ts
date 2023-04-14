@@ -2,8 +2,6 @@ import { NextResponse } from "next/server";
 import { WebMasterPool } from "@/config/db";
 export async function GET(request: Request) {
   try {
-    console.log("entro -------------->");
-
     const [alerta] = await WebMasterPool.query(
       "SELECT * FROM alertas ORDER BY alertas.posicion ASC"
     );
