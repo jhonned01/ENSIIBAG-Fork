@@ -1,13 +1,25 @@
 "use client";
 import TitulosInternos from "@/app/Inicio/TitulosInternos";
-import axios from "axios";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import LayoudAdmnistrativos from "./LayoudAdmnistrativos";
 
-const Administrativo = ({ data }: any) => {
+const Administrativo = () => {
+  const [Data, setData] = useState({} as any);
+
+  const GetData = async () => {
+    const administrativos = await fetch("/api/directorio/administrativos").then(
+      (res) => res.json()
+    );
+    setData(administrativos);
+  };
+
+  useEffect(() => {
+    GetData();
+  }, []);
+
   const [valueInput, setValue] = useState("");
 
-  const filteredItems = data.filter((item: any) => {
+  const filteredItems = Data?.directivos?.filter((item: any) => {
     let nombre = `${item?.admco_nom1?.toLowerCase()} ${item?.admco_nom2?.toLowerCase()} ${item?.admco_ape1?.toLowerCase()} ${item?.admco_ape2?.toLowerCase()}`;
     let nombre2 = nombre.replace(/\s+/g, " ");
     let Ape1Nombre = `${item.admco_nom2} ${item.admco_ape1} ${item.admco_ape2} ${item.admco_nom1}`;
@@ -30,9 +42,8 @@ const Administrativo = ({ data }: any) => {
           .includes(valueInput.toLowerCase()))
     );
   });
-  // console.log("=====filteredItems===============================");
-  // console.log(data);
-  // console.log("====================================");
+  // console.log("filteredItems", filteredItems);
+
   const subHeaderComponentMemo = React.useMemo(() => {
     return (
       <input
@@ -54,7 +65,6 @@ const Administrativo = ({ data }: any) => {
     <div>
       <TitulosInternos title="Administrativos" />
       {/* navegations */}
-      {/* <ModalAdministrativos /> */}
       <div>
         <form>
           <div className="pl-[2%] grid grid-cols-1 gap-6 my-4 sm:grid-cols-4">

@@ -3,15 +3,9 @@ import InfoAdministrativos from "./InfoAdministrativos";
 
 const LayoudAdmnistrativos = ({ users }: any) => {
   const [info, setInfo] = React.useState([]);
-  console.log("==============xd======================");
-  console.log(users);
-  console.log("====================================");
 
   useEffect(() => {}, []);
 
-  console.log("===INFO DOCENTES=================================");
-  console.log(info);
-  console.log("====================================");
   return (
     <div className="grid sm:grid-cols-10 h-full ">
       <div className="h-full sm:col-span-3 overflow-auto">

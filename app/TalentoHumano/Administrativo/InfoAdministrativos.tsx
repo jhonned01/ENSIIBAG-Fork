@@ -1,9 +1,10 @@
+"use client";
 import axios from "axios";
 import Image from "next/image";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 const InfoAdministrativos = ({ info, contratista }: any) => {
-  const [correoInst, setCorreoInst] = useState([]);
+  const [correoInst, setCorreoInst]: any = useState([]);
 
   const usersCorreo = () => {
     let correo = `${info?.admco_nom1?.toLowerCase()}.${info?.admco_ape1?.toLowerCase()}`;
@@ -24,14 +25,10 @@ const InfoAdministrativos = ({ info, contratista }: any) => {
   useEffect(() => {
     // send back end dato  axios
     usersCorreo();
-    // let result = axios.post("/api/directorio/correoAdministrativos", {
-    //   correo: correo,
-    // });
   }, [info]);
 
-  console.log("=========correoInst===========================");
-  console.log(info);
-  console.log("====================================");
+  console.log("correoInst======", correoInst);
+
   return (
     <>
       {Object.keys(info).length ? (
@@ -52,18 +49,15 @@ const InfoAdministrativos = ({ info, contratista }: any) => {
                         ? "siluetaHombre.jpg"
                         : "no_imagen.jpg"
                     }`}
-                    className="w-full shadow-xl align-middle border-none absolute"
+                    className="object-cover object-top w-full shadow-xl align-middle border-none absolute"
                     alt="Imagen"
-                    objectPosition="top"
-                    objectFit="cover"
                   />
                 </div>
               </div>
               <div className="w-full text-center mt-20">
                 <div className="flex justify-center lg:pt-4 pt-8 pb-0">
-                  NO REGISTRA CORREO INSTITUCIONAL EN EL SISTEMA
-                  {/* {correoInst[0]?.correo_insti ||
-                    "NO REGISTRA CORREO INSTITUCIONAL EN EL SISTEMA"} */}
+                  {correoInst[0]?.correo_insti ||
+                    "NO REGISTRA CORREO INSTITUCIONAL EN EL SISTEMA"}
                 </div>
               </div>
             </div>
