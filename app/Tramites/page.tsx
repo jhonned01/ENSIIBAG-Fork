@@ -16,7 +16,7 @@ const Tramites = () => {
             Desde esta consulta realice la solicitud de documentos en línea,
             tales como:
           </h1>
-          <div className="text-center mt-4 grid lg:grid-cols-2 items-center">
+          <div className="text-center mt-4 grid lg:grid-cols-2 items-center overflow-hidden">
             <div className="p-4 w-full h-full flex flex-wrap flex-col justify-center bg-[#99C5B5] lg:rounded-l-xl">
               <TramitesItem
                 numero="1."

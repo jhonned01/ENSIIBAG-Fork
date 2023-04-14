@@ -5,16 +5,13 @@ import React, { useEffect, useState } from "react";
 const ItemSubmenuDynamic = ({ params: { id } }: any) => {
   const [Data, setData] = useState({} as any);
 
-  const GetData = async () => {
-    const infos = await fetch(`/api/ItemSubmenuDynamic/${id}`).then((res) =>
-      res.json()
-    );
-    setData(infos?.ItemSubMenu);
-  };
-
-  console.log("data", Data);
-
   useEffect(() => {
+    const GetData = async () => {
+      const infos = await fetch(`/api/ItemSubmenuDynamic/${id}`).then((res) =>
+        res.json()
+      );
+      setData(infos?.ItemSubMenu);
+    };
     if (id) {
       GetData();
     }

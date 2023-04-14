@@ -21,15 +21,13 @@ const SubMenu = ({ img, external, click, link, description, title }: any) => {
                 {title}
               </h1>
             </div>
-            <div>
-              <Image
-                src={img}
-                width={240}
-                height={90}
-                alt={img}
-                className="object-contain"
-              />
-            </div>
+            <Image
+              className="object-contain mx-auto"
+              src={img}
+              width={240}
+              height={90}
+              alt={img}
+            />
           </a>
         </section>
       );
