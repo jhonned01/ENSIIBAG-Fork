@@ -1,10 +1,10 @@
 "use client";
 import Link from "next/link";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import React from "react";
 
 function TitulosInternos({ title }: any) {
-  // const router = useRouter();
+  const router = useRouter();
 
   return (
     <section
@@ -31,10 +31,10 @@ function TitulosInternos({ title }: any) {
             </Link>
 
             <button
-              // onClick={(e) => {
-              //   e.preventDefault();
-              //   router.back();
-              // }}
+              onClick={(e) => {
+                e.preventDefault();
+                router.back();
+              }}
               className="transform rounded-r-lg border-2 bg-[#006F46] border-[#006F46] hover:bg-[#005335] hover:border-[#005335] px-8 py-2 text-sm font-medium capitalize tracking-wide text-white hover:text-white transition-colors duration-200"
             >
               VOLVER

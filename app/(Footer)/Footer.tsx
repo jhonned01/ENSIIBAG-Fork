@@ -46,7 +46,7 @@ const Footer = () => {
             <InfoInteresItem
               imgInfoInteres="/Footer/GALERIA.webp"
               alt="imagenGaleria"
-              link=""
+              link="/Galerias"
               title={"Galería"}
             />
             <InfoInteresItem
@@ -142,7 +142,7 @@ const Footer = () => {
             Políticas de Información
           </div>
           {/* <div className="mt-1 grid grid-cols-1 lg:grid-cols-2 gap-2 place-content-center"> */}
-          <div className="flex flex-col md:flex-row flex-wrap gap-4">
+          <div className="flex flex-col md:flex-row gap-4">
             <PoliticasInfoItem
               title="Políticas de Seguridad"
               icono={<SVGpolitica />}

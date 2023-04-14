@@ -8,13 +8,18 @@ const InfoAdministrativos = ({ info, contratista }: any) => {
 
   const usersCorreo = () => {
     let correo = `${info?.admco_nom1?.toLowerCase()}.${info?.admco_ape1?.toLowerCase()}`;
+    let correo2 = `${info?.admco_nom1?.toLowerCase()}.${info?.admco_ape2?.toLowerCase()}`;
 
     // axios post correo
-    axios
-      .post("/api/directorio/correoAdministrativos", {
+    axios("/api/directorio/correoAdministrativos", {
+      params: {
         correo,
-      })
+        correo2,
+      },
+    })
       .then((res) => {
+        console.log("res", res);
+
         setCorreoInst(res.data);
       })
       .catch((err) => {
@@ -24,7 +29,9 @@ const InfoAdministrativos = ({ info, contratista }: any) => {
 
   useEffect(() => {
     // send back end dato  axios
-    usersCorreo();
+    if (Object.keys(info)?.length > 0) {
+      usersCorreo();
+    }
   }, [info]);
 
   return (
@@ -54,7 +61,7 @@ const InfoAdministrativos = ({ info, contratista }: any) => {
               </div>
               <div className="w-full text-center mt-20">
                 <div className="flex justify-center lg:pt-4 pt-8 pb-0">
-                  {correoInst[0]?.correo_insti ||
+                  {correoInst?.correoData?.[0]?.correo_insti ||
                     "NO REGISTRA CORREO INSTITUCIONAL EN EL SISTEMA"}
                 </div>
               </div>
