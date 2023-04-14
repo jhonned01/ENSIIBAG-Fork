@@ -10,8 +10,6 @@ export async function GET(request: Request) {
       ` SELECT id_correo_inst,correo_insti FROM correo_institucional WHERE correo_insti LIKE "%${correo}%"
         `
     );
-    console.log(` SELECT id_correo_inst,correo_insti FROM correo_institucional WHERE correo_insti LIKE "%${correo}%"
-    `);
 
     return NextResponse.json(
       {

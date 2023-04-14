@@ -8,9 +8,6 @@ import {
 } from "react-icons/hi";
 
 function InclusionItem({ setOpen, open, setZoom, zoom, setContraste }: any) {
-  console.log("====================================");
-  console.log(zoom);
-  console.log("====================================");
   return (
     <>
       {open && (

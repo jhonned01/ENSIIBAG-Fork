@@ -21,7 +21,6 @@ export async function GET(req: Request) {
 
       return acc;
     }, {});
-    console.log("gestionNormalisada", gestionNormalisada);
 
     return NextResponse.json(
       { gestiones: Object.values(gestionNormalisada) },

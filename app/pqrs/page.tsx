@@ -63,9 +63,7 @@ function PQRS() {
       });
     e.target.reset();
   };
-  console.log("====================data================");
-  console.log(data);
-  console.log("====================================");
+
   const handlerClickVidation = async (e: any) => {
     e.preventDefault();
 
@@ -75,9 +73,6 @@ function PQRS() {
         PQRS: value.PQRS,
       })
       .then((res) => {
-        console.log("=========prueba===========================");
-        console.log(res.data);
-        console.log("====================================");
         setDataValidation(res.data);
         if (res?.data?.validation?.length == 0) {
           Swal.fire({
@@ -101,9 +96,7 @@ function PQRS() {
         console.log(err);
       });
   };
-  console.log("====================================");
-  console.log(dataValidation);
-  console.log("====================================");
+
   const handlerOpenModal = (
     data: any,
     open: any,

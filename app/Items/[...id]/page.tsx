@@ -16,23 +16,7 @@ const Items = ({ response: data }: any) => {
     GetData();
   }, []);
 
-  //   console.log("Data", Data);
-
-  //   const router = useRouter();
-  //   const { id } = router.query;
-  //   console.log("========================id============");
-  //   console.log(router.query.id[1]);
-  //   console.log("====================================");
-
   const showData = () => {
-    // if (data[0]?.msn || data[1]?.error) {
-    //   return (
-    //     <div>
-    //       <p className="error">{data[0]?.msn}</p>
-    //       <p className="error">{data[1]?.error}</p>
-    //     </div>
-    //   );
-    // }
     if (Data?.data?.length > 0) {
       return <BusquedaAños response={Data?.data} id={"router?.query?.id[0]"} />;
     } else {
@@ -61,31 +45,3 @@ const Items = ({ response: data }: any) => {
 };
 
 export default Items;
-
-// export async function getServerSideProps({ query }) {
-//   try {
-//     const idItem = query.id[0];
-
-//     const response = await axios
-//       .post(`${process.env.APP_URL}api/ItemId`, {
-//         idItem,
-//       })
-//       .then((res) => res.data);
-
-//     return {
-//       props: {
-//         response: response,
-//       },
-//     };
-//   } catch (error) {
-//     return {
-//       props: {
-//         response: [
-//           {
-//             msn: "error al cargar los datos recargue la página si el error persiste contacte con soporte ",
-//           },
-//         ],
-//       },
-//     };
-//   }
-// }

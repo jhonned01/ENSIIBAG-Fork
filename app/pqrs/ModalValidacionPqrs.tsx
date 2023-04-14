@@ -3,9 +3,6 @@ import React, { useState } from "react";
 import PqrsTable from "./PqrsTable";
 
 const ModalValidacionPqrs = ({ open, onCloseModal, data }: any) => {
-  console.log("====================================validate");
-  console.log(data);
-  console.log("====================================validate");
   const [res, setRes] = useState();
 
   const showDataInfo = () => {

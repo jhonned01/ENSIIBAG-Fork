@@ -29,9 +29,6 @@ const InfoAdministrativos = ({ info, contratista }: any) => {
     // });
   }, [info]);
 
-  console.log("=========correoInst===========================");
-  console.log(info);
-  console.log("====================================");
   return (
     <>
       {Object.keys(info).length ? (

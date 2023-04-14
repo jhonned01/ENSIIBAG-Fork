@@ -71,22 +71,6 @@ function Index({ infoNino }: any) {
     </>
   );
 
-  //   const filterYoutube = (url: any) => {
-  //     const regExp =
-  //       /^.(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]).*/;
-  //     const match = url.match(regExp);
-  //     return match && match[2].length === 11 ? match[2] : null;
-  //   };
-
-  //   let result = filterYoutube(`{item.archivo}`);
-  //   console.log("====================================");
-  //   console.log(result);
-  //   console.log("====================================");
-  // const opts = {
-  //   height: "350",
-  //   width: "100%",
-  // };
-
   return (
     <div>
       <TitulosInternos title="Información para niños, niñas y adolescentes" />
@@ -96,36 +80,3 @@ function Index({ infoNino }: any) {
 }
 
 export default Index;
-
-// export async function getServerSideProps() {
-//   try {
-//     const infoNino = await fetch(`${process.env.APP_URL}api/infoNino`).then(
-//       (res) => res.json()
-//     );
-
-//     if (infoNino[0]?.msn || infoNino[1]?.error) {
-//       return {
-//         props: {
-//           infoNino: infoNino || [],
-//         },
-//       };
-//     }
-//     return {
-//       props: {
-//         infoNino: infoNino,
-//       },
-//     };
-//   } catch (err) {
-//     console.log("=============================");
-//     console.log(err);
-//     return {
-//       props: {
-//         infoNino: [
-//           {
-//             msn: "Fallo la conexión con el servidor si el error persiste contacte a soporte ",
-//           },
-//         ],
-//       },
-//     };
-//   }
-// }

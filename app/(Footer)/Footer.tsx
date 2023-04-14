@@ -20,11 +20,8 @@ const Footer = () => {
     const res = await fetch(`/api/redesSociales`);
     const redes = await res.json();
 
-    console.log(redes);
-
     setRedes(redes);
   }
-  console.log("cosa");
 
   useEffect(() => {
     ObtenerSedes();
