@@ -11,7 +11,7 @@ const ItemMenu = ({ children, ruta, setIsOpen }: any) => {
 
         //   setIsOpen(false);
         // }}
-        className="cursor-pointer mx-3 my-6 md:mx-1 lg:mx-3"
+        className=" mx-3 my-6 md:mx-1 "
       >
         <div className="uppercase md:text-base lg:text-xl">{children}</div>
       </li>
