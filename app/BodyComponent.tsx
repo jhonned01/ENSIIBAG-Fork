@@ -56,9 +56,10 @@ const BodyComponent = () => {
           {Object.keys(Data) && Data?.Slider?.length ? (
             <Slider imageSlider={Data.Slider} />
           ) : (
-            <p className="text-red-900">
-              {" "}
-              Imágenes del Slider pendientes por publicar desde WebMaster
+            <p className="text-red-900 text-center mx-auto">
+              Las Imágenes del Slider están cargando
+              {/* Imágenes del Slider pendientes por publicar desde WebMaster
+               */}
             </p>
           )}
         </div>

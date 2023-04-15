@@ -48,7 +48,7 @@ const BodyComponent = () => {
             alt="PendienteWebMaster"
             className="object-cover"
           />
-          <p className="error">
+          <p className="error text-center mx-auto">
             Imágenes del Slider pendientes por publicar desde WebMaster
           </p>
         </div>
