@@ -9,7 +9,7 @@ const Footer = () => {
   const [InfoSedes, setInfoSedes] = useState([]);
   const [Redes, setRedes] = useState([] as any);
 
-  // console.log("Redes", Redes);
+  console.log("Redes", Redes);
 
   async function ObtenerSedes() {
     const res = await fetch(`/api/Footer`);
@@ -101,20 +101,20 @@ const Footer = () => {
           <div className="mb-3 text-lg font-bold text-center ">Contáctanos</div>
           <div className="flex flex-wrap gap-2  place-content-center">
             <ContactanosItem
-              imgContactanos="/Footer/whatsappFOOTER.webp"
-              link={Redes[1]?.link}
-              alt="Footer/imagenWhatsapp"
-              title={"Whatsapp"}
-            />
-            <ContactanosItem
               imgContactanos="/Footer/facebookFOOTER.webp"
               link={Redes[0]?.link}
               alt="Footer/imagenFacebook"
               title={"Facebook"}
             />
             <ContactanosItem
+              imgContactanos="/Footer/whatsappFOOTER.webp"
+              link={Redes[1]?.link}
+              alt="Footer/imagenWhatsapp"
+              title={"Whatsapp"}
+            />
+            <ContactanosItem
               imgContactanos="/Footer/"
-              link={Redes[0]?.link}
+              link={Redes[2]?.link}
               alt="Footer/"
               title={"Youtube"}
             />
