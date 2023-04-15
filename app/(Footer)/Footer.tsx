@@ -9,6 +9,8 @@ const Footer = () => {
   const [InfoSedes, setInfoSedes] = useState([]);
   const [Redes, setRedes] = useState([] as any);
 
+  // console.log("Redes", Redes);
+
   async function ObtenerSedes() {
     const res = await fetch(`/api/Footer`);
     const sede = await res?.json();
@@ -105,36 +107,43 @@ const Footer = () => {
               title={"Whatsapp"}
             />
             <ContactanosItem
-              imgContactanos="/Footer/telefonicaFOOTER.webp"
-              link={Redes[4]?.link}
-              alt="Footer/imagenTelefonica"
-              title={"Teléfono"}
-            />
-            <ContactanosItem
-              imgContactanos="/Footer/correosFOOTER.webp"
-              click={true}
-              link="/PruebaExcel"
-              alt="Footer/imagenCorreos"
-              title={"Correos Institucionales"}
-            />
-            <ContactanosItem
               imgContactanos="/Footer/facebookFOOTER.webp"
               link={Redes[0]?.link}
               alt="Footer/imagenFacebook"
               title={"Facebook"}
             />
             <ContactanosItem
+              imgContactanos="/Footer/"
+              link={Redes[0]?.link}
+              alt="Footer/"
+              title={"Youtube"}
+            />
+            {/* <ContactanosItem
+              imgContactanos="/Footer/telefonicaFOOTER.webp"
+              link={Redes[4]?.link}
+              alt="Footer/imagenTelefonica"
+              title={"Teléfono"}
+            /> */}
+            {/* <ContactanosItem
+              imgContactanos="/Footer/correosFOOTER.webp"
+              click={true}
+              link="/PruebaExcel"
+              alt="Footer/imagenCorreos"
+              title={"Correos Institucionales"}
+            /> */}
+
+            {/* <ContactanosItem
               imgContactanos="/Footer/TwitterFOOTER.png"
               link={Redes[3]?.link}
               alt="Footer/imagenEmisora"
               title={"Twitter"}
-            />
-            <ContactanosItem
+            /> */}
+            {/* <ContactanosItem
               imgContactanos="/Footer/instagramFOOTER.webp"
               link={Redes[2]?.link}
               alt="Footer/imagenInstagram"
               title={"Instagram"}
-            />
+            /> */}
           </div>
 
           {/* Politicas de información */}

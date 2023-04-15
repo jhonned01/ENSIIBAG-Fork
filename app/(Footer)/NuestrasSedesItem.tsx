@@ -6,7 +6,7 @@ function NuestrasSedesItem({ title, link, titleShow }: any) {
     <Link href={link}>
       <div
         title={titleShow}
-        className="leading-none w-[8.6rem] h-[4.6rem]  relative group overflow-hidden px-3 rounded-md bg-[#005335]
+        className="flex items-center leading-normal w-[8.6rem] h-[3.6rem]  relative group overflow-hidden px-3 rounded-md bg-[#005335]
         before:absolute 
         before:inset-0 
         before:bg-[#003823] 
