@@ -71,10 +71,10 @@ const Footer = () => {
           <div className="max-w-xl mx-auto">
             <div className="flex place-content-center flex-wrap gap-2">
               {InfoSedes?.length ? (
-                InfoSedes?.map((sede: any) => (
+                InfoSedes?.map((sede: any, key) => (
                   <NuestrasSedesItem
                     title={sede.nombre}
-                    key={sede.id}
+                    key={key}
                     link={`/Sedes/${sede.id}`}
                     titleShow="Ver mas información"
                   />
@@ -98,10 +98,10 @@ const Footer = () => {
         <div className="text-white flex flex-col items-center justify-center text-xl font-bold text-center mb-2 lg:col-span-2 xl:col-span-1">
           <div className="mb-3 text-lg font-bold text-center ">Contáctanos</div>
           <div className="flex flex-wrap gap-2  place-content-center">
-            {Redes?.redes?.map((red: any) => {
+            {Redes?.redes?.map((red: any, key: any) => {
               return (
                 <ContactanosItem
-                  key={red.id}
+                  key={key}
                   imgContactanos={red?.icon}
                   link={red?.link}
                   alt={red?.Red_Social}
