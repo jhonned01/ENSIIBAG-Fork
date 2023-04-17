@@ -22,10 +22,10 @@ const SubMenu = ({ img, external, click, link, description, title }: any) => {
               </h1>
             </div>
             <Image
-              className="object-contain mx-auto"
+              className=" mx-auto"
               src={img}
               width={240}
-              height={90}
+              height={20}
               alt={img}
             />
           </a>
