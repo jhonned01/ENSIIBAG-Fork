@@ -72,8 +72,8 @@ const Footer = () => {
           </div>
           <div className="max-w-xl mx-auto">
             <div className="flex place-content-center flex-wrap gap-2">
-              {InfoSedes.length ? (
-                InfoSedes.map((sede: any) => (
+              {InfoSedes?.length ? (
+                InfoSedes?.map((sede: any) => (
                   <NuestrasSedesItem
                     title={sede.nombre}
                     key={sede.id}

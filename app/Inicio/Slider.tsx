@@ -15,12 +15,20 @@ const Slider = ({ imageSlider }: any) => {
       {imageSlider.map((images: any) => (
         <div key={images?.lugar}>
           <figure className="bg-white center w-full h-full">
+            {/* 
             <Image
               src={`https://ensiibague.edu.co/portal/img/${images?.imagen}`}
               alt={images?.lugar}
               width={1500}
               height={900}
               className="object-fill"
+            /> 
+            */}
+
+            <img
+              src={`https://ensiibague.edu.co/portal/img/${images?.imagen}`}
+              alt={`imagen slider #${images?.lugar}`}
+              className="w-screen h-screen object-cover"
             />
           </figure>
         </div>
