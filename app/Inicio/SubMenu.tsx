@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import React from "react";
 
 const SubMenu = ({ img, external, click, link, description, title }: any) => {
@@ -17,39 +16,37 @@ const SubMenu = ({ img, external, click, link, description, title }: any) => {
             className="cursor-pointer h-full flex flex-col justify-around"
           >
             <div>
-              <h1 className="font-bold lg:max-w-[17rem] m-auto  uppercase text-[#006F46] text-center text-[0.66rem] md:text-[0.8rem] lg:text-[0.8rem] xl:text-[1.2rem] leading-none">
+              <h1 className="font-bold lg:max-w-[17rem] m-auto  uppercase text-[#006F46] text-center text-[0.66rem] md:text-[0.7rem] lg:text-[0.6rem] xl:text-[1rem] leading-none">
                 {title}
               </h1>
             </div>
             <Image
-              className=" mx-auto"
               src={img}
-              width={240}
-              height={20}
+              width={195}
+              height={45}
               alt={img}
+              style={{ objectFit: "cover", margin: "auto" }}
             />
           </a>
         </section>
       );
     } else {
       return (
-        // <Link href={`${link}`}></Link>
         <section
           onClick={() => click()}
-          className=" flex flex-col justify-around cursor-pointer bg-white w-full h-auto overflow-hidden border-b border-[#006F46]"
+          className=" flex flex-col justify-around cursor-pointer bg-white w-full h-auto  border-b border-[#006F46]"
         >
-          <div>
-            <h1 className="font-bold lg:max-w-[17rem] m-auto  uppercase text-[#006F46] text-center text-[0.66rem] md:text-[0.8rem] lg:text-[0.8rem] xl:text-[1.2rem] leading-none">
-              {title}
-            </h1>
-          </div>
+          <h1 className="font-bold lg:max-w-[17rem] m-auto  uppercase text-[#006F46] text-center text-[0.66rem] md:text-[0.7rem] lg:text-[0.6rem] xl:text-[1rem] leading-none">
+            {title}
+          </h1>
+
           <div>
             <Image
               src={img}
-              width={240}
-              height={90}
+              width={195}
+              height={45}
               alt={img}
-              className="object-contain mx-auto"
+              style={{ objectFit: "cover", margin: "auto" }}
             />
           </div>
         </section>
