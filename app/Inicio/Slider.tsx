@@ -22,12 +22,6 @@ const Slider = ({ imageSlider }: any) => {
             width={1200}
             height={500}
           />
-          {/* <img
-            src={`https://ensiibague.edu.co/portal/img/${slider?.imagen}`}
-            alt="al"
-            width={500}
-            height={500}
-          /> */}
         </div>
       ))}
     </Carousel>
