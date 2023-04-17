@@ -9,8 +9,10 @@ const BodyComponent = () => {
   const [Data, setData] = useState({} as any);
 
   const GetData = async () => {
-    const Alertas = await fetch("/api/alerta").then((res) => res.json());
-    const Slider = await fetch("/api/slider").then((res) => res.json());
+    const AlertasRes = fetch("/api/alerta").then((res) => res.json());
+    const SliderRes = fetch("/api/slider").then((res) => res.json());
+
+    const [Alertas, Slider] = await Promise.all([AlertasRes, SliderRes]);
 
     setData({ Alertas: Alertas.alerta || [], Slider: Slider.slider || [] });
   };
@@ -50,16 +52,14 @@ const BodyComponent = () => {
           />
         </div>
 
-        <div className="lg:col-span-6 overflow-hidden">
+        <div className="lg:col-span-6  w-full max-h-[500px] overflow-hidden">
           {/* Center carousel */}
 
-          {Object.keys(Data) && Data?.Slider?.length ? (
-            <Slider imageSlider={Data.Slider} />
+          {Object.keys(Data).length > 0 && Data?.Slider?.length ? (
+            <Slider imageSlider={Data?.Slider} />
           ) : (
             <p className="text-red-900 text-center mx-auto">
               Las Imágenes del Slider están cargando
-              {/* Imágenes del Slider pendientes por publicar desde WebMaster
-               */}
             </p>
           )}
         </div>
