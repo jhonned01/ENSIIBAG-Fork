@@ -18,7 +18,9 @@ function InfoNinosItem({
   return (
     <>
       <div className="text-center mx-2 my-auto">
-        <h1 className="font-bold text-[#003823] text-3xl">{title}</h1>
+        <h1 className="font-black text-[#003823] text-3xl capitalize">
+          {title}
+        </h1>
         <h1 className="text-[#005335] text-2xl font-bold">
           {subtitle1}{" "}
           <span className="text-[#006F46] font-medium">{contenido}</span>

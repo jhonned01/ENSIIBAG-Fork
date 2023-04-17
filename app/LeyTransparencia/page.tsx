@@ -20,7 +20,7 @@ const LeyTransparencia = () => {
     GetData();
   }, []);
 
-  console.log(Data);
+  console.log("Data", Data);
 
   return (
     <>
@@ -46,7 +46,6 @@ const LeyTransparencia = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  {" "}
                   {Object.keys(Data).length > 0 &&
                     Data?.leyTransparenciaSedes[0]?.direccion}
                 </a>
@@ -132,8 +131,8 @@ const LeyTransparencia = () => {
               </p>
               <p>
                 <b>1.2.1</b> Ubicación física de la sedes
-                {Object.keys(Data).length > 0 &&
-                  Object.keys(Data).map((sede: any) => {
+                {Object?.keys(Data)?.length > 0 &&
+                  Data?.leyTransparenciaSedes?.map((sede: any) => {
                     if (sede.principal == 1) {
                       return (
                         <>
@@ -162,7 +161,7 @@ const LeyTransparencia = () => {
                 <b>1.2.2</b> Horarios y días de atención al público
               </p>
               {Object.keys(Data).length > 0 &&
-                Object.keys(Data).map((sede: any) => {
+                Data?.leyTransparenciaSedes?.map((sede: any) => {
                   if (sede.principal == 1) {
                     return (
                       <>
@@ -193,13 +192,6 @@ const LeyTransparencia = () => {
                 })}
             </div>
 
-            {/* Pendiente Not Judiciales */}
-            {/* <div>
-              <p>
-                <b>1.3</b>Notificaciones Judiciales
-              </p>
-            </div> */}
-
             <div>
               <p>
                 <b>1.4</b> Políticas de Seguridad:
@@ -213,7 +205,7 @@ const LeyTransparencia = () => {
                 </p>
               </p>
               <p>
-                <b>1.4.1</b> Política de Tratamiento de la Información:
+                <b>1.4.1</b> Políticas de Tratamiento de la Información:
                 <p
                   className="text-[#006F46] cursor-pointer"
                   onClick={() =>
@@ -378,7 +370,9 @@ const LeyTransparencia = () => {
                 <b>3.1</b>{" "}
                 <span
                   onClick={() =>
-                    router.push("/GestionDirectiva/HorizonteIstitucional")
+                    router.push(
+                      "/Gestiones/GestionDirectiva/HorizonteInstitucional"
+                    )
                   }
                   className="cursor-pointer text-[#006F46] "
                 >
@@ -387,7 +381,9 @@ const LeyTransparencia = () => {
                 Y{" "}
                 <span
                   onClick={() =>
-                    router.push("/GestionDirectiva/HorizonteIstitucional")
+                    router.push(
+                      "/Gestiones/GestionDirectiva/HorizonteInstitucional"
+                    )
                   }
                   className="cursor-pointer text-[#006F46]"
                 >
@@ -396,33 +392,35 @@ const LeyTransparencia = () => {
                 ,
                 <span
                   onClick={() =>
-                    router.push("/GestionDirectiva/HorizonteIstitucional")
+                    router.push(
+                      "/Gestiones/GestionDirectiva/HorizonteInstitucional"
+                    )
                   }
                   className="cursor-pointer text-[#006F46]"
                 >
-                  {" "}
-                  Objetivos
+                  Valores
                 </span>
                 ,{" "}
                 <span
                   onClick={() =>
-                    router.push("/GestionDirectiva/HorizonteIstitucional")
+                    router.push(
+                      "/Gestiones/GestionDirectiva/HorizonteInstitucional"
+                    )
                   }
                   className="cursor-pointer text-[#006F46]"
                 >
-                  Política
+                  Principios
                 </span>
               </p>
             </div>
 
             <div>
               <p>
-                <b>3.2</b>{" "}
+                <b>3.2</b>
                 <span
                   onClick={() => router.push("/Items/3.2/Función y Deberes")}
                   className="cursor-pointer text-[#006F46]"
                 >
-                  {" "}
                   Función y Deberes
                 </span>
               </p>
@@ -446,7 +444,7 @@ const LeyTransparencia = () => {
               <p>
                 <b>3.4 </b>
                 <span
-                  onClick={() => router.push("/Items/11.1/Organigrama")}
+                  onClick={() => router.push("/Items/3.4/Organigrama")}
                   className="cursor-pointer text-[#006F46]"
                 >
                   Organigrama

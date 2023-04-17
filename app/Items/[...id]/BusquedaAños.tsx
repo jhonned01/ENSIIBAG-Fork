@@ -3,11 +3,12 @@ import axios from "axios";
 import { useState } from "react";
 
 const BusquedaAños = ({ response, id }: any) => {
-  const [Years, setYears]: any = useState(null);
+  const [Years, setYears]: any = useState("");
   const [cargando, setCargando] = useState(false);
   const [data, setData]: any = useState([]);
 
   console.log("data", data);
+  console.log("Years", Years);
 
   const handleChange = async (e: any) => {
     e.preventDefault();
@@ -47,7 +48,7 @@ const BusquedaAños = ({ response, id }: any) => {
               className="text-white form-select appearance-none block w-full px-3 py-1.5 text-base font-normal bg-[#005335] bg-clip-padding border-none bg-no-repeat border rounded-md transition duration-300 ease-in-out m-0  focus:outline-none"
             >
               {/* <option selected></option> */}
-              <option value={""}>Todos</option>
+              <option>Todos</option>
               {response.map((item: any, key: any) => (
                 <option key={key} value={item.year}>
                   {item.year}

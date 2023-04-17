@@ -21,7 +21,7 @@ const Items = ({ params }: any) => {
       GetData();
     }
   }, [id]);
-  console.log("DAta", Data);
+  // console.log("DAta", Data);
 
   return (
     <div>

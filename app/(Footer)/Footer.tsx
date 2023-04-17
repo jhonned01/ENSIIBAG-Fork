@@ -125,7 +125,7 @@ const Footer = () => {
             <PoliticasInfoItem
               title="Políticas de Tratamiento"
               icono={<SVGpolitica />}
-              link="/Items/1.4.1/Política de Tratamiento de la Información"
+              link="/Items/1.4.1/Políticas de Tratamiento de la Información"
             />
           </div>
         </div>
