@@ -1,7 +1,11 @@
 import { NextResponse } from "next/server";
 import { WebMasterPool } from "@/config/db";
-export async function POST(req: Request) {
-  const { idItem, id, years } = await req?.json();
+export async function GET(req: Request) {
+  // const { idItem, id, years } = await req?.json();
+  const { searchParams } = new URL(req.url);
+  const id: any = searchParams.get("id");
+  const years: any = searchParams.get("years");
+  const idItem: any = searchParams.get("idItem");
 
   const consultaItems = async () => {
     try {
@@ -25,16 +29,13 @@ export async function POST(req: Request) {
 
   const consultaTodos = async (id: number) => {
     try {
-      const [pdfTodos] = await WebMasterPool.query(
+      const [pdfTodos]: any = await WebMasterPool.query(
         `select *, pdf.nombre as pdf_nom from pdf inner join item on item.id = pdf.item_id where item.item in ("${id}") and estado = 1 `
       );
-
-      // console.log(
-      //   `select *, pdf.nombre as pdf_nom from pdf inner join item on item.id = pdf.item_id where item.item in ("${id}") and estado = 1 `
-      // );
+      console.log("pdfTodos", pdfTodos);
 
       return NextResponse.json(
-        { pdfTodos },
+        { pdfTodos: pdfTodos || [] },
         {
           status: 200,
         }
@@ -67,9 +68,9 @@ export async function POST(req: Request) {
       );
     }
   };
-  if (idItem) {
-    await consultaItems();
-  }
+  // if (idItem) {
+  //   await consultaItems();
+  // }
 
   if (years && id) {
     if (years === "Todos") {

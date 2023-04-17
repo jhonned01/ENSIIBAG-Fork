@@ -12,18 +12,16 @@ const Footer = () => {
   // console.log("Redes", Redes);
 
   async function ObtenerSedes() {
-    const res = await fetch(`/api/Footer`);
-    const sede = await res?.json();
+    const sedes = fetch(`/api/Footer`).then((response) => response.json());
+    const res = fetch(`/api/redesSociales`).then((response) => response.json());
 
+    const [sede, redes] = await Promise.all([sedes, res]);
+
+    setRedes(redes);
     setInfoSedes(sede.nuestrasSedes);
   }
 
-  async function ObtenerRedes() {
-    const res = await fetch(`/api/redesSociales`);
-    const redes = await res.json();
-
-    setRedes(redes);
-  }
+  async function ObtenerRedes() {}
 
   useEffect(() => {
     ObtenerSedes();
@@ -100,50 +98,17 @@ const Footer = () => {
         <div className="text-white flex flex-col items-center justify-center text-xl font-bold text-center mb-2 lg:col-span-2 xl:col-span-1">
           <div className="mb-3 text-lg font-bold text-center ">Contáctanos</div>
           <div className="flex flex-wrap gap-2  place-content-center">
-            <ContactanosItem
-              imgContactanos="/Footer/whatsappFOOTER.webp"
-              link={Redes[1]?.link}
-              alt="Footer/imagenWhatsapp"
-              title={"Whatsapp"}
-            />
-            <ContactanosItem
-              imgContactanos="/Footer/facebookFOOTER.webp"
-              link={Redes[0]?.link}
-              alt="Footer/imagenFacebook"
-              title={"Facebook"}
-            />
-            <ContactanosItem
-              imgContactanos="/Footer/"
-              link={Redes[0]?.link}
-              alt="Footer/"
-              title={"Youtube"}
-            />
-            {/* <ContactanosItem
-              imgContactanos="/Footer/telefonicaFOOTER.webp"
-              link={Redes[4]?.link}
-              alt="Footer/imagenTelefonica"
-              title={"Teléfono"}
-            /> */}
-            {/* <ContactanosItem
-              imgContactanos="/Footer/correosFOOTER.webp"
-              click={true}
-              link="/PruebaExcel"
-              alt="Footer/imagenCorreos"
-              title={"Correos Institucionales"}
-            /> */}
-
-            {/* <ContactanosItem
-              imgContactanos="/Footer/TwitterFOOTER.png"
-              link={Redes[3]?.link}
-              alt="Footer/imagenEmisora"
-              title={"Twitter"}
-            /> */}
-            {/* <ContactanosItem
-              imgContactanos="/Footer/instagramFOOTER.webp"
-              link={Redes[2]?.link}
-              alt="Footer/imagenInstagram"
-              title={"Instagram"}
-            /> */}
+            {Redes?.redes?.map((red: any) => {
+              return (
+                <ContactanosItem
+                  key={red.id}
+                  imgContactanos={red?.icon}
+                  link={red?.link}
+                  alt={red?.Red_Social}
+                  title={red?.Red_Social}
+                />
+              );
+            })}
           </div>
 
           {/* Politicas de información */}
@@ -168,8 +133,8 @@ const Footer = () => {
 
       {/* info empresa */}
       <div>
-        <div className="animate-bounce mt-[2rem] text-center font-bold text-lg lg:text-2xl pb-3 text-white">
-          <h1>SLOGAN</h1>
+        <div className="animate-bounce mt-[2rem] text-center font-bold text-lg lg:text-2xl pb-3 text-white uppercase">
+          <h1>LLEVA LA NORMAL EN TU CORAZÓN</h1>
         </div>
         <div className="border-white border-b-2 mb-2"></div>
         <div>

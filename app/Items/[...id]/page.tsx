@@ -4,17 +4,26 @@ import BusquedaAños from "./BusquedaAños";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
-const Items = ({ response: data }: any) => {
+const Items = ({ params }: any) => {
   const [Data, setData] = useState({} as any);
 
   const GetData = async () => {
-    const ItemId = await fetch("/api/ItemId").then((res) => res.json());
-    setData(ItemId);
+    const id = params?.id[0];
+    const title = params?.id[0];
+
+    const idItem = await fetch(`/api/ItemId?id=${id}&years=Todos&idItem=""`);
+    // id,
+    // years: "Todos",
+    const newData = await idItem.json();
+    console.log("newData", newData);
+
+    setData(idItem);
   };
 
   useEffect(() => {
     GetData();
   }, []);
+  console.log("DAta", Data);
 
   const showData = () => {
     if (Data?.data?.length > 0) {
