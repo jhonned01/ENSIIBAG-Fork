@@ -36,12 +36,10 @@ export async function GET(req: Request) {
 export async function POST(req: Request) {
   const { id, years } = await req?.json();
   try {
-    console.log(id, years);
-
     if (id && years) {
       if (years == "Todos") {
         const [pdfTodos]: any = await WebMasterPool.query(
-          `select *, pdf.nombre as pdf_nom from pdf inner join item on item.id = pdf.item_id where item.item in (${id}) and estado = 1 `
+          `select *, pdf.nombre as pdf_nom from pdf inner join item on item.id = pdf.item_id where item.item in ("${id}") and estado = 1 `
         );
 
         return NextResponse.json(

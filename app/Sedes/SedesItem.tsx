@@ -19,11 +19,11 @@ function SedesItem({
       <section className="pt-6">
         <div className=" mx-auto">
           <div className="grid grid-cols-1">
-            <div className=" md:w-4/6 px-12 md:px-4 mr-auto ml-auto">
+            <div className=" md:w-[50%] px-12 md:px-4 mr-auto ml-auto">
               <div className="text-center  flex flex-col min-w-0 break-words bg-[#006F46] w-full shadow-lg rounded-lg">
                 <div className="w-full h-full">
                   <Image
-                    className="rounded-t-lg object-cover"
+                    className="rounded-t-lg object-cover !h-[480px]"
                     src={imgSede}
                     width={1300}
                     height={480}

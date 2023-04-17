@@ -2,6 +2,7 @@
 import TitulosInternos from "@/app/Inicio/TitulosInternos";
 import SedesItem from "../SedesItem";
 import { useEffect, useState } from "react";
+import CompCargando from "@/app/Inicio/CompCargando";
 
 function SedePrincipal({ params: { sedesId } }: any) {
   // console.log("sede", sedesId);
@@ -42,13 +43,14 @@ function SedePrincipal({ params: { sedesId } }: any) {
         </>
       ) : (
         <>
-          <div className="flex items-center justify-center min-h-screen">
+          <CompCargando />
+          {/* <div className="flex items-center justify-center min-h-screen">
             <div
               style={{ borderTopColor: "transparent" }}
               className="w-8 h-8 border-4 border-[#006f46] rounded-full animate-spin"
             />
             <p className="ml-2">Cargando...</p>
-          </div>
+          </div> */}
         </>
       )}
     </div>

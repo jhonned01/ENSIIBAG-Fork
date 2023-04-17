@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const SubMenu = ({ img, external, click, link, description, title }: any) => {
@@ -32,24 +33,26 @@ const SubMenu = ({ img, external, click, link, description, title }: any) => {
       );
     } else {
       return (
-        <section
-          onClick={() => click()}
-          className=" flex flex-col justify-around cursor-pointer bg-white w-full h-auto  border-b border-[#006F46]"
-        >
-          <h1 className="font-bold lg:max-w-[17rem] m-auto  uppercase text-[#006F46] text-center text-[0.66rem] md:text-[0.7rem] lg:text-[0.6rem] xl:text-[1rem] leading-none">
-            {title}
-          </h1>
+        <Link href={`${link}`}>
+          <section
+            // onClick={() => click()}
+            className=" flex flex-col justify-around cursor-pointer bg-white w-full h-auto  border-b border-[#006F46]"
+          >
+            <h1 className="font-bold lg:max-w-[17rem] m-auto  uppercase text-[#006F46] text-center text-[0.66rem] md:text-[0.7rem] lg:text-[0.6rem] xl:text-[1rem] leading-none">
+              {title}
+            </h1>
 
-          <div>
-            <Image
-              src={img}
-              width={195}
-              height={45}
-              alt={img}
-              style={{ objectFit: "cover", margin: "auto" }}
-            />
-          </div>
-        </section>
+            <div>
+              <Image
+                src={img}
+                width={195}
+                height={45}
+                alt={img}
+                style={{ objectFit: "cover", margin: "auto" }}
+              />
+            </div>
+          </section>
+        </Link>
       );
     }
   }

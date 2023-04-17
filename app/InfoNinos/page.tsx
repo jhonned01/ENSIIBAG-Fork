@@ -17,7 +17,7 @@ function InfoNinos() {
     GetData();
   }, []);
 
-  console.log("Data", Data);
+  // console.log("Data", Data);
 
   return (
     <div>
@@ -25,12 +25,12 @@ function InfoNinos() {
       {Object.keys(Data).length > 0 && (
         <>
           {Data?.infoNino?.length > 0 ? (
-            <div className="flex flex-wrap p-3">
+            <div className="flex justify-center flex-wrap p-3">
               {Data?.infoNino?.map((item: any) => {
                 return (
                   <div
                     key={item.id}
-                    className="flex flex-wrap pr-[1.1rem] justify-center"
+                    className="flex flex-col gap-4 flex-wrap pr-[1.1rem] items-center justify-center"
                   >
                     <InfoNinosItem
                       key={item.id}
@@ -45,9 +45,9 @@ function InfoNinos() {
                       fecha={item.fecha}
                     />
                     <ReactPlayer
-                      className="border-b-2 mb-4 lg:border-none lg:mb-0 pb-6 col-span-2 "
+                      className="border-2 border-dashed border-[#006f46] rounded-2xl overflow-hidden"
                       url={`${item.archivo}`}
-                      width="400px"
+                      width="300px"
                       height={"200px"}
                       controls={true}
                     />
