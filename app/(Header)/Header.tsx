@@ -50,7 +50,7 @@ const Header = ({ setZoom, zoom, setContraste }: any) => {
             </button>
           </span>
         </div>
-        <div className="">
+        <menu>
           <ul
             className={` text-center  flex flex-col h-screen md:h-auto  md:flex md:flex-row  md:items-center z-[-1] md:z-auto md:static gap-2 absolute text-white font-semibold bg-[#003823] md:bg-transparent w-full left-0 top-full md:w-auto md:py-0  md:pl-0 pl-7 md:opacity-100 opacity-0 right-[-400px] transition-all ease-in  ${
               isOpen ? ` right-0 py-11 opacity-100` : `hidden`
@@ -103,7 +103,7 @@ const Header = ({ setZoom, zoom, setContraste }: any) => {
               </Link>
             </li>
           </ul>
-        </div>
+        </menu>
       </nav>
 
       {/* Boton de Inclusion */}

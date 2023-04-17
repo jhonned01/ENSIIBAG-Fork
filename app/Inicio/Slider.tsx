@@ -10,19 +10,18 @@ const Slider = ({ imageSlider }: any) => {
       // infiniteLoop
       showThumbs={false}
       showStatus={false}
-      // interval={5000}
+      interval={5000}
+      className="w-full h-[500px]  bg-red-900 "
     >
-      {imageSlider.map((images: any) => (
-        <div key={images?.lugar}>
-          <figure className="bg-white center w-full h-full">
-            <Image
-              className="object-fill"
-              src={`https://ensiibague.edu.co/portal/img/${images.imagen}`}
-              alt={images.lugar}
-              width={1500}
-              height={900}
-            />
-          </figure>
+      {imageSlider.map((slider: any) => (
+        <div key={slider?.lugar}>
+          <Image
+            src={`https://ensiibague.edu.co/portal/img/${slider?.imagen}`}
+            alt={slider?.lugar}
+            style={{ objectFit: "contain" }}
+            width={1200}
+            height={500}
+          />
         </div>
       ))}
     </Carousel>
