@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import AlertasItem from "./Alertas/AlertasItem";
 import SubMenu from "./Inicio/SubMenu";
 import Slider from "./Inicio/Slider";
+import CompCargando from "./Inicio/CompCargando";
 
 const BodyComponent = () => {
   const [open, setOpen] = useState(true);
@@ -31,40 +32,38 @@ const BodyComponent = () => {
         <AlertasItem setOpen={setOpen} open={open} alerta={Data.Alertas} />
       )}
       <div className="grid grid-cols-1 lg:grid-cols-10">
-        {/* left */}
-        <div className=" flex p-2 lg:grid gap-2 lg:col-span-2 bg-white ">
-          <SubMenu
-            title="Talento Humano"
-            img="/Directorio/iconos/iconoTalentoHumano.png"
-            link={"/TalentoHumano"}
-          />
-          <SubMenu
-            title="PROCESOS DE PREMATRÍCULAS Y MATRÍCULAS"
-            img="/Directorio/iconos/iconosMatriculas.png"
-            link={"/ProcesosMatriculas"}
-          />
-          <SubMenu
-            title="Trámites y Servicios"
-            img="/Directorio/iconos/iconoTramites.png"
-            link={"/Tramites"}
-          />
+        <div className="grid lg:col-span-2">
+          <div className="flex p-2 lg:grid gap-2 lg:col-span-2 bg-white">
+            <SubMenu
+              title="Talento Humano"
+              img="/Directorio/iconos/iconoTalentoHumano.png"
+              link="/TalentoHumano"
+            />
+            <SubMenu
+              title="PROCESOS DE PREMATRÍCULAS Y MATRÍCULAS"
+              img="/Directorio/iconos/iconosMatriculas.png"
+              link="/ProcesosMatriculas"
+            />
+            <SubMenu
+              title="Trámites y Servicios"
+              img="/Directorio/iconos/iconoTramites.png"
+              link="/Tramites"
+            />
+          </div>
         </div>
 
+        {/* SLIDER */}
         <div className="lg:col-span-6 overflow-hidden">
-          {/* Center carousel */}
-
           {Object.keys(Data) && Data?.Slider?.length ? (
             <Slider imageSlider={Data.Slider} />
           ) : (
             <p className="text-red-900 text-center mx-auto">
-              Las Imágenes del Slider están cargando
-              {/* Imágenes del Slider pendientes por publicar desde WebMaster
-               */}
+              <CompCargando />
+              {/* Las Imágenes del Slider están cargando */}
             </p>
           )}
         </div>
 
-        {/* right */}
         <div className="grid lg:col-span-2">
           <div className="flex p-2 lg:grid gap-2 lg:col-span-2 bg-white">
             <SubMenu
@@ -77,7 +76,7 @@ const BodyComponent = () => {
             <SubMenu
               title={`Procesos de Gobierno Escolar ${new Date().getFullYear()}`}
               external={true}
-              link=""
+              link="/PaginaEnConstruccion"
               // click={() => router.push("/TrazabilidadControl")}
               img="/Directorio/iconos/iconoGobiernoEscolar.png"
             />
