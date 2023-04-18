@@ -3,7 +3,8 @@ import { WebMasterPool } from "@/config/db";
 export async function GET(request: Request) {
   try {
     const [nuestrasSedes] = await WebMasterPool.query(
-      `SELECT id,nombre,principal FROM sedes`
+      `SELECT id,nombre,principal,direccion,telefonos,correo,horarios,imagen,principal FROM sedes ORDER BY principal DESC
+      `
     );
     return NextResponse.json(
       {
