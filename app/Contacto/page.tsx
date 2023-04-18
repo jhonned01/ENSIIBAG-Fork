@@ -28,8 +28,8 @@ const Contacto = () => {
             <div className="bg-white rounded-lg  mb-10">
               <img
                 src={`https://ensiibague.edu.co/portal/img/${item?.imagen}`}
-                alt="image"
-                className="object-cove"
+                alt={`${item?.imagen}`}
+                className="object-cover"
               />
 
               <div className="p-8 sm:p-9 md:p-7 xl:p-9 text-center">
