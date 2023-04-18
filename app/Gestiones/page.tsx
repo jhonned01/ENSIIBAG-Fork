@@ -17,8 +17,6 @@ const Gestiones = () => {
     GetData();
   }, []);
 
-  console.log("Data", Data);
-
   const showData = () => {
     return (
       <div className="container gap-6 py-6 flex flex-row flex-wrap mx-auto bg-gray-50 justify-center">
@@ -30,6 +28,7 @@ const Gestiones = () => {
                 title={gestion.titulo}
                 moduloIteam={gestion.submenus}
                 links={gestion.links}
+                Dynamic={gestion.Dinamic}
               />
             </div>
           );

@@ -3,17 +3,23 @@ import React, { useState } from "react";
 import Image from "next/image";
 import ModalModulos from "./ModalModulos";
 
-const ModulosIteam = ({ img, title, moduloIteam }: any) => {
+const ModulosIteam = ({ img, title, moduloIteam, Dynamic }: any) => {
   const [modal, setModal] = useState(false);
   const [Click, setClick] = useState(false);
 
-  const handleModal = (modal: any, setModal: any, moduloIteam: any) => {
+  const handleModal = (
+    modal: any,
+    setModal: any,
+    moduloIteam: any,
+    Dynamic: any
+  ) => {
     return (
       <ModalModulos
         setModal={setModal}
         modal={modal}
         title={title}
         moduloIteam={moduloIteam}
+        Dynamic={Dynamic}
       />
     );
   };
@@ -21,7 +27,7 @@ const ModulosIteam = ({ img, title, moduloIteam }: any) => {
   return (
     //   background
     <>
-      {Click && handleModal(modal, setModal, moduloIteam)}
+      {Click && handleModal(modal, setModal, moduloIteam, Dynamic)}
 
       {/* card */}
       <div
