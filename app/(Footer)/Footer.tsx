@@ -9,9 +9,7 @@ const Footer = () => {
   const [InfoSedes, setInfoSedes] = useState([]);
   const [Redes, setRedes] = useState([] as any);
 
-  // console.log("Redes", Redes);
-
-  async function ObtenerSedes() {
+  async function ObtenerData() {
     const sedes = fetch(`/api/Footer`).then((response) => response.json());
     const res = fetch(`/api/redesSociales`).then((response) => response.json());
 
@@ -21,11 +19,8 @@ const Footer = () => {
     setInfoSedes(sede.nuestrasSedes);
   }
 
-  async function ObtenerRedes() {}
-
   useEffect(() => {
-    ObtenerSedes();
-    ObtenerRedes();
+    ObtenerData();
   }, []);
 
   return (

@@ -20,7 +20,6 @@ function SedePrincipal({ params: { sedesId } }: any) {
       GetData();
     }
   }, [sedesId]);
-  console.log("Data", Data);
 
   return (
     <div className="">

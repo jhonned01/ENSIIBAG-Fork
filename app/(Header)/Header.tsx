@@ -65,7 +65,7 @@ const Header = ({ setZoom, zoom, setContraste }: any) => {
             <ItemMenu ruta="/PaginaEnConstruccion" setIsOpen={setIsOpen}>
               Congreso e Investigación
             </ItemMenu>
-            <ItemMenu ruta="/PaginaEnConstruccion" setIsOpen={setIsOpen}>
+            <ItemMenu ruta="/Contacto" setIsOpen={setIsOpen}>
               Contáctenos
             </ItemMenu>
 
