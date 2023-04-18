@@ -79,7 +79,7 @@ const BodyComponent = () => {
             <SubMenu
               title={`Procesos de Gobierno Escolar ${new Date().getFullYear()}`}
               external={true}
-              link="/PaginaEnConstruccion"
+              link="https://www.ensiibague.edu.co/sygescol2023/gobie_voto_ingreso.php"
               // click={() => router.push("/TrazabilidadControl")}
               img="/Directorio/iconos/iconoGobiernoEscolar.png"
             />

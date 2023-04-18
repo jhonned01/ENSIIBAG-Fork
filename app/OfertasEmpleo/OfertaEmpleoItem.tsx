@@ -10,7 +10,10 @@ function OfertaEmpleoItem({
 }: any) {
   // console.log(cargo);
   return (
-    <div className="mx-auto w-[86%] bg-white rounded-lg border border-gray-200 shadow-md">
+    <div
+      style={{ filter: "drop-shadow(0px 0px 3px #006f46)" }}
+      className="mx-auto w-[66%] bg-white rounded-lg border border-gray-300 shadow-md"
+    >
       <Image
         className="!p-[1rem] rounded-lg object-contain"
         src="/Ofertas/OfertasEmpleo.jpg"
