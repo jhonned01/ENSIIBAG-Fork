@@ -19,7 +19,7 @@ function OfertasEmpleo() {
   }, []);
 
   const showOfertasEmpleo = () => (
-    <div className="container mx-auto p-4 gap-4 grid md:grid-cols-2 lg:grid-cols-3">
+    <div className="container mx-auto flex flex-col md:flex-row flex-wrap items-center justify-center p-4 gap-4">
       {Data?.ofertasEmpleo?.length > 0 ? (
         <>
           {Data?.ofertasEmpleo?.map((item: any) => {

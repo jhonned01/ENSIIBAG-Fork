@@ -12,10 +12,10 @@ const ItemSubMenu = ({ img, title, click }: any) => {
       >
         <Image
           src={img}
-          height={200}
+          height={300}
           width={200}
           alt={img}
-          className="aspect-video w-96 rounded-2xl object-cover "
+          className="w-full !h-full rounded-2xl object-cover "
         />
 
         {/* text information */}
