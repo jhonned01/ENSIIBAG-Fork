@@ -11,7 +11,7 @@ const Slider = ({ imageSlider }: any) => {
       showThumbs={false}
       showStatus={false}
       interval={5000}
-      className="w-full h-[500px]  "
+      className=" md:w-auto max-h-[500px]  "
     >
       {imageSlider.map((slider: any) => (
         <div key={slider?.lugar}>
