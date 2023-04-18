@@ -23,7 +23,7 @@ const ItemSubmenuDynamic = ({ params: { id } }: any) => {
         <>
           <TitulosInternos title={Data?.name} />
           <div
-            className="container flex flex-col items-center p-4"
+            className="container mx-auto flex flex-col items-center justify-center p-4"
             dangerouslySetInnerHTML={{ __html: `${Data?.contenido || ""}` }}
           />
         </>
