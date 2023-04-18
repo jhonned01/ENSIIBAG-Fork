@@ -3,7 +3,7 @@ import { WebMasterPool } from "@/config/db";
 export async function GET(req: Request) {
   try {
     const [gestiones]: any = await WebMasterPool.query(
-      "SELECT submenu.id as idSubmenu, menu.id as idMenu, menu.name, submenu.submenu, submenu.name as nombreSubmenu, submenu.link FROM menu INNER JOIN submenu on submenu.menu = menu.id WHERE menu.tipo LIKE 'gestion'"
+      "SELECT submenu.id as idSubmenu, menu.id as idMenu, menu.name, menu.imagen, submenu.submenu, submenu.name as nombreSubmenu, submenu.link FROM menu INNER JOIN submenu on submenu.menu = menu.id WHERE menu.tipo LIKE 'gestion'"
     );
 
     const gestionNormalisada = gestiones.reduce((acc: any, el: any) => {
@@ -15,6 +15,7 @@ export async function GET(req: Request) {
           idSubmenu: el.idSubmenu,
           idMenu: el.idMenu,
           submenus: [],
+          imagen: el.imagen,
         };
       }
       acc[key]?.submenus?.push(el);
