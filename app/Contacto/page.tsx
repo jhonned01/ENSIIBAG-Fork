@@ -17,8 +17,6 @@ const Contacto = () => {
     ObtenerData();
   }, []);
 
-  console.log(InfoSedes);
-
   return (
     <>
       <TitulosInternos title="Nuestras Sedes" />
