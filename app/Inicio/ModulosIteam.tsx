@@ -35,7 +35,7 @@ const ModulosIteam = ({ img, title, moduloIteam }: any) => {
         <div>
           {img && (
             <Image
-              className="object-cover rounded-2xl"
+              className="w-full h-full object-cover rounded-2xl"
               src={img}
               height={200}
               width={200}
