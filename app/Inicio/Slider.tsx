@@ -6,8 +6,8 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a lo
 const Slider = ({ imageSlider }: any) => {
   return (
     <Carousel
-      // autoPlay
-      // infiniteLoop
+      autoPlay
+      infiniteLoop
       showThumbs={false}
       showStatus={false}
       interval={5000}
