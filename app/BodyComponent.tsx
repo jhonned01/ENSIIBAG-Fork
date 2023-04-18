@@ -33,9 +33,9 @@ const BodyComponent = () => {
       {Data?.Alertas?.length && (
         <AlertasItem setOpen={setOpen} open={open} alerta={Data.Alertas} />
       )}
-      <div className="grid grid-cols-1 lg:grid-cols-10">
+      <div className="flex flex-wrap lg:grid lg:rid-cols-1 lg:grid-cols-10 justify-center">
         <div className="grid lg:col-span-2">
-          <div className="flex p-2 lg:grid gap-2 lg:col-span-2 bg-white">
+          <div className="flex p-2 lg:grid gap-2 lg:col-span-2 bg-white justify-center">
             <SubMenu
               title="Talento Humano"
               img="/Directorio/iconos/iconoTalentoHumano.png"
