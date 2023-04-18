@@ -2,7 +2,6 @@
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import AlertasItem from "../Alertas/AlertasItem";
-import SafaBody from "./SafaBody";
 
 const BodyComponent = () => {
   const [open, setOpen] = useState(true);
@@ -35,7 +34,7 @@ const BodyComponent = () => {
     if (Data.slider && Data.slider.length >= 1) {
       return (
         <div className="mx-auto ">
-          <SafaBody imageSlider={Data.slider} />
+          {/* <SafaBody imageSlider={Data.slider} /> */}
         </div>
       );
     } else {
