@@ -1,8 +1,10 @@
 import Link from "next/link";
 import React from "react";
 
-const ModalModulos = ({ title, moduloIteam, setModal, modal, links }: any) => {
+const ModalModulos = ({ title, moduloIteam, setModal, modal }: any) => {
   //  quitar espacios del titulo
+
+  console.log("moduloIteam", moduloIteam);
 
   return (
     <>
@@ -31,7 +33,9 @@ const ModalModulos = ({ title, moduloIteam, setModal, modal, links }: any) => {
               <li className=" grid gap-3 grid-cols-1 md:grid-cols-2">
                 {moduloIteam?.map((iteam: any, key: any) => (
                   <Link
-                    href={`${iteam.link}${iteam.idSubmenu}`}
+                    href={`${iteam?.link}${
+                      iteam?.Dinamic == "0" ? `${iteam?.idSubmenu}` : ""
+                    }`}
                     key={key}
                     className="cursor-pointer select-none h-20 flex flex-1 items-center p-4 transition duration-500 ease-in-out transform hover:-translate-y-2 rounded-2xl border-2 hover:shadow-2xl border-[#006F46]"
                   >
