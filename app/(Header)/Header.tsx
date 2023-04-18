@@ -62,7 +62,11 @@ const Header = ({ setZoom, zoom, setContraste }: any) => {
             <ItemMenu ruta="/Items/2.6/Noticias" setIsOpen={setIsOpen}>
               Noticias
             </ItemMenu>
-            <ItemMenu ruta="/PaginaEnConstruccion" setIsOpen={setIsOpen}>
+            <ItemMenu
+              ruta="https://congresopedagogicoensi.blogspot.com/2021/10/ii-congreso-2021.html"
+              setIsOpen={setIsOpen}
+              external={true}
+            >
               Congreso e Investigación
             </ItemMenu>
             <ItemMenu ruta="/Contacto" setIsOpen={setIsOpen}>
