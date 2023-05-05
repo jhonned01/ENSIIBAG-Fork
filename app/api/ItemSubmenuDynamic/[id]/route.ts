@@ -15,7 +15,6 @@ export async function GET(request: Request, { params: { id } }: any) {
     const [ItemSubMenu]: any = await WebMasterPool.query(
       `SELECT id as IdSubMenu,menu as IdMenu,contenido,name FROM submenu WHERE id = ${id}`
     );
-    console.log(ItemSubMenu);
 
     return NextResponse.json(
       {
