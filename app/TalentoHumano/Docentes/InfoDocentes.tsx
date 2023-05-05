@@ -9,29 +9,28 @@ const InfoDocentes = ({ info }: any) => {
 
   console.log("info=", info);
 
-  const usersCorreo = () => {
-    setLoading(true);
-    let correo = `${info?.dcne_nom1?.toLowerCase()}.${info?.dcne_ape1?.toLowerCase()}`;
-
-    // axios post correo
-    if (info) {
-      axios("/api/directorio/infoDocente", {
-        params: {
-          correo, // correo del docente
-          id: info?.g, // id del docente
-        },
-      })
-        .then((res) => {
-          setData(res.data);
-          setLoading(false);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    }
-  };
-
   useEffect(() => {
+    const usersCorreo = () => {
+      setLoading(true);
+      let correo = `${info?.dcne_nom1?.toLowerCase()}.${info?.dcne_ape1?.toLowerCase()}`;
+
+      // axios post correo
+      if (info) {
+        axios("/api/directorio/infoDocente", {
+          params: {
+            correo, // correo del docente
+            id: info?.g, // id del docente
+          },
+        })
+          .then((res) => {
+            setData(res.data);
+            setLoading(false);
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+      }
+    };
     // send back end dato  axios
 
     usersCorreo();

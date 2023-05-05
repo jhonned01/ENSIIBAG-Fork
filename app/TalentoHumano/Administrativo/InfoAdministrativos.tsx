@@ -6,28 +6,28 @@ import { useEffect, useState } from "react";
 const InfoAdministrativos = ({ info, contratista }: any) => {
   const [correoInst, setCorreoInst]: any = useState([]);
 
-  const usersCorreo = () => {
-    let correo = `${info?.admco_nom1?.toLowerCase()}.${info?.admco_ape1?.toLowerCase()}`;
-    let correo2 = `${info?.admco_nom1?.toLowerCase()}.${info?.admco_ape2?.toLowerCase()}`;
-
-    // axios post correo
-    axios("/api/directorio/correoAdministrativos", {
-      params: {
-        correo,
-        correo2,
-      },
-    })
-      .then((res) => {
-        console.log("res", res);
-
-        setCorreoInst(res.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
-
   useEffect(() => {
+    const usersCorreo = () => {
+      let correo = `${info?.admco_nom1?.toLowerCase()}.${info?.admco_ape1?.toLowerCase()}`;
+      let correo2 = `${info?.admco_nom1?.toLowerCase()}.${info?.admco_ape2?.toLowerCase()}`;
+
+      // axios post correo
+      axios("/api/directorio/correoAdministrativos", {
+        params: {
+          correo,
+          correo2,
+        },
+      })
+        .then((res) => {
+          console.log("res", res);
+
+          setCorreoInst(res.data);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    };
+
     // send back end dato  axios
     if (Object.keys(info)?.length > 0) {
       usersCorreo();
