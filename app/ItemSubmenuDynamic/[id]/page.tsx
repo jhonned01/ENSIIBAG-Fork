@@ -11,13 +11,13 @@ const ItemSubmenuDynamic = ({ params: { id } }: any) => {
   const router = useRouter();
 
   useEffect(() => {
-    const GetData = async () => {
+    const GetData = async (id: Number) => {
       try {
         setLoading(true);
-        const infos = await fetch(`/api/ItemSubmenuDynamic/${id}`).then((res) =>
+        const info = await fetch(`/api/ItemSubmenuDynamic/${id}`).then((res) =>
           res.json()
         );
-        setData(infos?.ItemSubMenu);
+        setData(info?.ItemSubMenu);
         setLoading(false);
       } catch (error) {
         console.log(error);
@@ -28,9 +28,9 @@ const ItemSubmenuDynamic = ({ params: { id } }: any) => {
       }
     };
     if (id) {
-      GetData();
+      GetData(id);
     }
-  }, [id]);
+  }, [id, router]);
 
   return (
     <div>
