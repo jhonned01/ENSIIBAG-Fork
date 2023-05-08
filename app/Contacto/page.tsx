@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import TitulosInternos from "../Inicio/TitulosInternos";
 import Link from "next/link";
+import Image from "next/image";
 
 const Contacto = () => {
   const [InfoSedes, setInfoSedes] = useState([]);
@@ -23,12 +24,22 @@ const Contacto = () => {
       <div className="p-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4  container mx-auto justify-center items-center ">
         {InfoSedes?.map((item: any, key: any) => (
           <div key={key}>
-            <div className="bg-white rounded-lg  mb-10">
+            <div className="bg-white rounded-lg  mb-10 ">
               <img
                 src={`https://ensiibague.edu.co/portal/img/${item?.imagen}`}
                 alt={`${item?.imagen}`}
                 className="object-cover rounded-xl"
               />
+              {/* <div className="max-w-[490px] max-h-[513px] absolute">
+                <Image
+                  src={`https://ensiibague.edu.co/portal/img/${item?.imagen}`}
+                  alt={`${item?.imagen}`}
+                  className=" rounded-xl"
+                  
+                  // style={{ objectFit: "contain" }}
+                  fill
+                />
+              </div> */}
 
               <div className="p-6 text-center">
                 <h3>
